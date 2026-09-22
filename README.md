@@ -58,24 +58,6 @@ Tratamento de bases operacionais
 
 Preparação de dados para dashboards e análises
 
-📁 Estrutura do Projeto
-
-## 📁 Estrutura do Projeto
-
-```text
-automacao-cadastro-dados/
-│
-├── data/
-│   └── dados_entrada.xlsx
-│
-├── scripts/
-│   └── automacao_cadastro.py
-│
-├── output/
-│   └── dados_tratados.xlsx
-│
-└── README.md
-
 🚀 Resultado
 
 O projeto demonstra a aplicação prática de automação de dados e processos de ETL (Extract, Transform, Load) utilizando Python, aproximando o desenvolvimento de um cenário real de tratamento de dados corporativos.
@@ -93,3 +75,21 @@ Projetos voltados para:
 🐍 Automação com Python
 
 🚚 Indicadores Logísticos
+
+📁 Estrutura do Projeto
+
+## 📁 Estrutura do Projeto
+
+```text
+automacao-cadastro-dados/
+│
+├── data/
+│   └── dados_entrada.xlsx
+│
+├── scripts/
+│   └── automacao_cadastro.py
+│
+├── output/
+│   └── dados_tratados.xlsx
+│
+└── README.md
