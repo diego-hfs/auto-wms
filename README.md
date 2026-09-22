@@ -62,10 +62,6 @@ Preparação de dados para dashboards e análises
 
 O projeto demonstra a aplicação prática de automação de dados e processos de ETL (Extract, Transform, Load) utilizando Python, aproximando o desenvolvimento de um cenário real de tratamento de dados corporativos.
 
-👨‍💻 Autor
-
-Diego Hernando Ferreira
-
 Projetos voltados para:
 
 📊 Business Intelligence
@@ -75,6 +71,10 @@ Projetos voltados para:
 🐍 Automação com Python
 
 🚚 Indicadores Logísticos
+
+👨‍💻 Autor
+
+Diego Hernando Ferreira
 
 📁 Estrutura do Projeto
 
