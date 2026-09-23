@@ -1,0 +1,44 @@
+x-auto-wms-base: &auto-wms-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: auto-wms:latest
+  volumes:
+    - .:/app
+
+services:
+  cadastro-item:
+    <<: *auto-wms-base
+    environment:
+      DRY_RUN: "true"
+    command: ["python", "automacao_cadastro_item_wms.py"]
+
+  alteracao-unidade:
+    <<: *auto-wms-base
+    environment:
+      DRY_RUN: "true"
+    command: ["python", "automacao_alteracao_unidade_medida.py"]
+
+  simulacao-cadastro:
+    <<: *auto-wms-base
+    environment:
+      SIMULATION_FLOW: "cadastro"
+      START_DELAY: "20"
+      SIM_DELAY: "0.30"
+      MAX_ITENS: "10"
+      NOVNC_URL: "http://localhost:6080/vnc.html?autoconnect=1&resize=scale"
+    ports:
+      - "6080:6080"
+    command: ["bash", "/app/docker/start-simulation.sh"]
+
+  simulacao-alteracao:
+    <<: *auto-wms-base
+    environment:
+      SIMULATION_FLOW: "alteracao"
+      START_DELAY: "20"
+      SIM_DELAY: "0.30"
+      MAX_ITENS: "10"
+      NOVNC_URL: "http://localhost:6081/vnc.html?autoconnect=1&resize=scale"
+    ports:
+      - "6081:6080"
+    command: ["bash", "/app/docker/start-simulation.sh"]

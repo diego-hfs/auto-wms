@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>WMS Demo — Cadastro de Item</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef2f7;color:#1f2937;overflow:hidden}header{height:76px;background:#172033;color:#fff;padding:18px 36px;display:flex;align-items:center;justify-content:space-between}header h1{margin:0;font-size:24px}.badge{background:#2563eb;padding:8px 14px;border-radius:999px;font-size:13px}.panel{position:absolute;left:40px;top:95px;width:1200px;height:470px;background:#fff;border-radius:16px;box-shadow:0 8px 25px rgba(0,0,0,.10)}.title{position:absolute;left:38px;top:24px;font-weight:700;font-size:20px}label{position:absolute;font-size:13px;font-weight:700;color:#475569}input{position:absolute;height:42px;border:1px solid #94a3b8;border-radius:8px;padding:8px 12px;font-size:16px;background:#fff}#item-label{left:120px;top:65px}#item{left:120px;top:85px;width:360px}#um-label{left:660px;top:65px}#unidade_medida{left:660px;top:85px;width:360px}#desc-label{left:120px;top:155px}#descricao{left:120px;top:175px;width:900px}#un-label{left:120px;top:245px}#unidade{left:120px;top:265px;width:360px}#lote-label{left:660px;top:245px}#lote{left:660px;top:265px;width:360px}#val-label{left:120px;top:335px}#validade{left:120px;top:355px;width:360px}#sku-label{left:660px;top:335px}#unidade_medida_sku{left:660px;top:355px;width:360px}#qtd-label{left:120px;top:425px}#quantidade{left:120px;top:445px;width:360px}#salvar{position:absolute;left:850px;top:445px;width:180px;height:44px;border:0;border-radius:9px;background:#16a34a;color:#fff;font-weight:700;font-size:15px;cursor:pointer}#status{position:absolute;left:40px;top:585px;width:1200px;height:42px;border-radius:10px;padding:11px 16px;background:#dbeafe;color:#1d4ed8;font-weight:700}.history{position:absolute;left:40px;top:645px;width:1200px;height:225px;background:#fff;border-radius:14px;padding:14px 18px;overflow:hidden}table{border-collapse:collapse;width:100%;font-size:12px}th,td{border-bottom:1px solid #e2e8f0;padding:6px 8px;text-align:left}th{background:#f8fafc}
+</style>
+</head>
+<body>
+<header><h1>WMS Demo — Cadastro de Produtos</h1><div class="badge">SIMULAÇÃO LOCAL • DADOS FICTÍCIOS</div></header>
+<section class="panel">
+<div class="title">Novo produto</div>
+<label id="item-label">Item</label><input id="item" autocomplete="off">
+<label id="um-label">Unidade de medida</label><input id="unidade_medida" autocomplete="off">
+<label id="desc-label">Descrição</label><input id="descricao" autocomplete="off">
+<label id="un-label">Unidade operacional</label><input id="unidade" autocomplete="off">
+<label id="lote-label">Controle de lote</label><input id="lote" autocomplete="off">
+<label id="val-label">Controle de validade</label><input id="validade" autocomplete="off">
+<label id="sku-label">Unidade de medida do SKU</label><input id="unidade_medida_sku" autocomplete="off">
+<label id="qtd-label">Quantidade de unidades</label><input id="quantidade" autocomplete="off">
+<button id="salvar">Salvar produto</button>
+</section>
+<div id="status">Aguardando automação...</div>
+<section class="history"><table><thead><tr><th>#</th><th>Item</th><th>Descrição</th><th>UM</th><th>Unidade</th><th>Lote</th><th>Validade</th><th>SKU</th><th>Qtd.</th></tr></thead><tbody id="tbody"></tbody></table></section>
+<script>
+let count=0;const ids=["item","unidade_medida","descricao","unidade","lote","validade","unidade_medida_sku","quantidade"];
+document.getElementById("salvar").addEventListener("click",()=>{const v=Object.fromEntries(ids.map(id=>[id,document.getElementById(id).value]));count+=1;const tr=document.createElement("tr");tr.innerHTML=`<td>${count}</td><td>${v.item}</td><td>${v.descricao}</td><td>${v.unidade_medida}</td><td>${v.unidade}</td><td>${v.lote}</td><td>${v.validade}</td><td>${v.unidade_medida_sku}</td><td>${v.quantidade}</td>`;document.getElementById("tbody").prepend(tr);document.getElementById("status").textContent=`Produto ${v.item} salvo na simulação. Total: ${count}`;ids.forEach(id=>document.getElementById(id).value="")});
+</script>
+</body>
+</html>
