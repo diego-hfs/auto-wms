@@ -93,7 +93,9 @@ python -m http.server 8000 --directory /app/mock_wms >/tmp/mock-http.log 2>&1 &
 HTTP_PID=$!
 sleep 1
 
-chromium --no-sandbox --disable-dev-shm-usage --disable-gpu --no-first-run --no-default-browser-check --kiosk --window-size=1280,900 "http://127.0.0.1:8000/${PAGE}" >/tmp/chromium.log 2>&1 &
+rm -rf /tmp/chromium-auto-wms
+
+chromium --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-software-rasterizer --disable-features=UseDBus,MediaRouter --no-first-run --no-default-browser-check --user-data-dir=/tmp/chromium-auto-wms --app="http://127.0.0.1:8000/${PAGE}" --window-size=1280,900 >/tmp/chromium.log 2>&1 &
 CHROMIUM_PID=$!
 
 echo

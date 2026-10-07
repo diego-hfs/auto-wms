@@ -17,23 +17,23 @@ pyautogui.FAILSAFE = False  # Simulação isolada dentro do desktop virtual Dock
 pyautogui.PAUSE = SIM_DELAY
 
 CADASTRO_POS = {
-    "item": (340, 201),
-    "unidade_medida": (880, 201),
-    "descricao": (610, 291),
-    "unidade": (340, 381),
-    "lote": (880, 381),
-    "validade": (340, 471),
-    "unidade_medida_sku": (880, 471),
-    "quantidade": (340, 561),
-    "salvar": (980, 562),
+    "item": (340, 234),
+    "unidade_medida": (880, 234),
+    "descricao": (610, 324),
+    "unidade": (340, 414),
+    "lote": (880, 414),
+    "validade": (340, 504),
+    "unidade_medida_sku": (880, 504),
+    "quantidade": (340, 594),
+    "salvar": (980, 594),
 }
 
 ALTERACAO_POS = {
-    "item": (340, 221),
-    "pesquisar": (810, 221),
-    "unidade_medida": (340, 371),
-    "unidade_medida_sku": (880, 371),
-    "salvar": (980, 482),
+    "item": (340, 254),
+    "pesquisar": (810, 254),
+    "unidade_medida": (340, 404),
+    "unidade_medida_sku": (880, 404),
+    "salvar": (980, 514),
 }
 
 
