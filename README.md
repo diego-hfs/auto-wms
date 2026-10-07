@@ -200,12 +200,6 @@ A simulação visual possui um script separado (`simulacao_visual_wms.py`) para 
 As duas automações foram validadas em ambiente Docker utilizando uma interface WMS fictícia, dados demonstrativos e PyAutoGUI executando interações reais dentro de um desktop virtual.
 
 A integração com um ambiente WMS real não faz parte da demonstração pública e permanece como etapa futura.
-## 👨‍💻 Autor
-
-**Diego Hernando Ferreira**
-
-Projeto de portfólio voltado para automação, logística, dados e melhoria de processos.
-
 
 ## 🔁 Persistência da simulação visual
 
@@ -213,9 +207,14 @@ Depois que os 10 registros são processados, o container continua ativo para man
 
 Use `Ctrl+C` no terminal para encerrar a simulação e `docker compose down` para limpar os containers/rede.
 
-
 ## 🛠️ Diagnóstico do ambiente gráfico
 
 O script aguarda o `Xvfb` responder antes de iniciar o PyAutoGUI. Isso evita falhas intermitentes como `Can't connect to display ":99"`.
 
 Se o Xvfb não iniciar corretamente, o terminal mostra automaticamente o conteúdo de `/tmp/xvfb.log`.
+
+## 👨‍💻 Autor
+
+**Diego Hernando Ferreira**
+
+Projeto de portfólio voltado para automação, logística, dados e melhoria de processos.
